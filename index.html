@@ -7,6 +7,14 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,700&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 
   <title>Frontend Mentor | Product preview card component</title>
 
@@ -19,6 +27,8 @@
       --Grey: hsl(228, 12%, 48%);
       --Cream: hsl(30, 38%, 92%);
       --White: hsl(0, 0%, 100%);
+      --Green500: hsl(158, 36%, 37%);
+      --Green700: hsl(158, 42%, 18%);
     }
 
     body,
@@ -64,6 +74,79 @@
       /* padding: 2%; */
     }
 
+    .heading {
+      text-transform: uppercase;
+      letter-spacing: 1cap;
+      margin-left: 10%;
+      color: var(--Grey);
+      padding-top: 15%;
+    }
+
+    .subheading {
+      font-family: "Fraunces", serif;
+      font-optical-sizing: auto;
+      font-weight: 700;
+      font-style: normal;
+      font-size: xx-large;
+      margin: 10%;
+    }
+
+    .description {
+      font-family: "Montserrat", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+      font-size: small;
+      margin: 10%;
+      color: hsl(228, 12%, 48%);
+    }
+
+    .price {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10%;
+      /* display: flex;
+      flex-direction: row; */
+    }
+
+    #discount-price {
+      margin-left: 10%;
+      color: var(--Green500);
+      font-family: "Fraunces", serif;
+      font-optical-sizing: auto;
+      font-weight: 700;
+      font-style: normal;
+      font-size: xx-large;
+    }
+
+    #actual-price {
+      font-family: "Montserrat", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+      font-size: small;
+      margin-left: 10%;
+      text-decoration: line-through;
+      color: var(--Grey);
+      /* font-size: small; */
+    }
+
+    .cart-btn {
+      background-color: var(--Green500);
+      border: 1px var(--Green500);
+      color: var(--White);
+      font-family: "Montserrat", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+      font-size: medium;
+      padding: 3%;
+      align-self: center;
+      /* padding: 50%; */
+      margin-left: 25%;
+      margin-bottom: 10%
+    }
+
     /* .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); } */
   </style>
@@ -75,7 +158,7 @@
       <img src="./images/image-product-desktop.jpg" alt="perfume" class="card-image">
     </div>
     <div class="contents">
-      <div class="heading">PERFUME</div>
+      <div class="heading">Perfume</div>
 
       <div class="subheading">Gabrielle Essence Eau De Parfum</div>
       <div class="description">
@@ -83,10 +166,10 @@
         Perfumer-Creator for the House of CHANEL.
       </div>
       <div class="price">
-        $149.99
-        $169.99
+        <span id="discount-price">$149.99</span>
+        <span id="actual-price">$169.99</span>
       </div>
-      <button class="cart-btn">Add to Cart</button>
+      <button class="cart-btn"><img src="./images/icon-cart.svg"> Add to Cart</button>
     </div>
   </div>
 
